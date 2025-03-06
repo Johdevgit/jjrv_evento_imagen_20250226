@@ -33,24 +33,24 @@ function createPopUp(parent){
     popup.id = "popup";
     popup.className = "popup";
     popup.style.top = parent.y - 110 + "px";
-    popup.syyle.left = parent.x - 75 + "px";
+    popup.style.left = parent.x - 75 + "px";
 
     let text = document.createElement("span")
     text.textContent = parent.id;
     popup.appendChild(text);
 
-    var map = document.getElementByIdClassName("map")[0];
+    var map = document.getElementsByClassName("map")[0];
     map.appendChild(popup);
 }
 
 function baseOnLoad(){
-    var map = document.getElementByIdClassName("map")[0];
+    var map = document.getElementsByClassName("map")[0];
     let base = document.getElementsByClassName("base")[0];
-    maxLeft = base.Width - 50;
+    maxLeft = base.width - 50;
     maxTop = base.height - 50;
 
     for(let i = 0; i < 6; i++){
-        let sensor = docuemnt.createElement("img");
+        let sensor = document.createElement("img");
         sensor.src = imgs[i%imgs.length];
         sensor.alt = i;
         sensor.id = i;
@@ -83,7 +83,7 @@ function startDrag(e){
     offsetX = e.clientX;
     offsetY = e.clientY;
     coordX = parseInt(targ.style.left);
-    coordY = parseInt(target.style.top);
+    coordY = parseInt(targ.style.top);
     drag = true;
 
     document.onmousemove = dragDiv;
